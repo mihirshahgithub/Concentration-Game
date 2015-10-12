@@ -43,7 +43,7 @@ body{
     color:orange;
      }
 
-.game_area{
+#game_area{
     width:100%;
     height:100%;
     border:5px solid orange;
@@ -104,8 +104,5 @@ img{
     height:100%;
 }
 
-.card .back:hover{
-    transform:rotateX(180deg);
-    transition-duration: 2s;
-}
+
 
