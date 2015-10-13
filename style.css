@@ -9,6 +9,8 @@ body{
     width: 100%;
     height: 20%;
     color: orange;
+    font-family: "arial", helvetica, sans-serif;
+    text-transform:uppercase;
 }
 
 #game_logo{
@@ -19,12 +21,16 @@ body{
 #game_logo img{
     width:10%;
     height:100%;
+    border: 5px solid orange;
+
 }
 #game_title{
     display:inline;
     padding-right:5%;
     position:relative;
     bottom:50%;
+    font-size:300%;
+    text-shadow: 2px 4px 3px grey;
 }
 
 #settings{
@@ -41,6 +47,7 @@ body{
 }
 #about a{
     color:orange;
+    text-decoration:none;
      }
 
 #game_area{
@@ -54,6 +61,8 @@ body{
     height:80%;
     width:20%;
     line-height:500%;
+    font-family: "arial", helvetica, sans-serif;
+    text-transform: uppercase;
 }
 .stats_label{
     color:orange;
