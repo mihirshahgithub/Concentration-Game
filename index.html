@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <title>Monster Match</title>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+    <script>
+       $(document).ready(function(){
+           $(".back").click(function card_back(){
+               alert("The paragraph was clicked!");});
+       })
+
+        var first_card_clicked=null;
+        var second_card_clicked=null;
+        var total_possible_matchups=2;
+        var match_counter=0;
+    </script>
 </head>
 <body>
+<p>CLICK ME PUNK</p>
 <header id="game_info">
     <h1 id="game_logo"><img src="images/halloween-5.jpg"></h1>
     <h1 id="game_title">Monster Match</h1>
@@ -57,133 +69,7 @@
     </div>
     <div class="card">
         <div class="front">
-            <img src="images/bates.jpg">
-        </div>
-        <div class="back">
-            <img src="images/halloween-13200870007Zb.jpg">
-        </div>
-
-    </div>
-    <div class="card">
-        <div class="front">
-            <img src="images/michael_myers.jpg">
-        </div>
-        <div class="back">
-            <img src="images/halloween-13200870007Zb.jpg">
-        </div>
-
-    </div>
-    <div class="card">
-        <div class="front">
-            <img src="images/michael_myers.jpg">
-        </div>
-        <div class="back">
-            <img src="images/halloween-13200870007Zb.jpg">>
-        </div>
-
-    </div>
-    <div class="card">
-        <div class="front">
-            <img src="images/scream.jpg">
-        </div>
-        <div class="back">
-            <img src="images/halloween-13200870007Zb.jpg">
-        </div>
-
-    </div>
-    <div class="card">
-        <div class="front">
-            <img src="images/scream.jpg">
-        </div>
-        <div class="back">
-            <img src="images/halloween-13200870007Zb.jpg">
-        </div>
-
-    </div>
-    <div class="card">
-        <div class="front">
             <img src="images/it.jpeg">
-        </div>
-        <div class="back">
-            <img src="images/halloween-13200870007Zb.jpg">
-        </div>
-
-    </div>
-    <div class="card">
-        <div class="front">
-            <img src="images/jason.jpg">
-        </div>
-        <div class="back">
-            <img src="images/halloween-13200870007Zb.jpg">
-        </div>
-
-    </div>
-    <div class="card">
-        <div class="front">
-            <img src="images/jason.jpg">
-        </div>
-        <div class="back">
-            <img src="images/halloween-13200870007Zb.jpg">
-        </div>
-
-    </div>
-    <div class="card">
-        <div class="front">
-            <img src="images/freddy.jpg">
-        </div>
-        <div class="back">
-            <img src="images/halloween-13200870007Zb.jpg">
-        </div>
-
-    </div>
-    <div class="card">
-        <div class="front">
-            <img src="images/freddy.jpg">
-        </div>
-        <div class="back">
-            <img src="images/halloween-13200870007Zb.jpg">
-        </div>
-
-    </div>
-    <div class="card">
-        <div class="front">
-            <img src="images/frankenstein.jpeg">
-        </div>
-        <div class="back">
-            <img src="images/halloween-13200870007Zb.jpg">
-        </div>
-
-    </div>
-    <div class="card">
-        <div class="front">
-            <img src="images/frankenstein.jpeg">
-        </div>
-        <div class="back">
-            <img src="images/halloween-13200870007Zb.jpg">
-        </div>
-
-    </div>
-    <div class="card">
-        <div class="front">
-            <img src="images/chucky.jpg">
-        </div>
-        <div class="back">
-            <img src="images/halloween-13200870007Zb.jpg">
-        </div>
-
-    </div>
-    <div class="card">
-        <div class="front">
-            <img src="images/chucky.jpg">
-        </div>
-        <div class="back">
-            <img src="images/halloween-13200870007Zb.jpg">
-        </div>
-
-    </div>
-    <div class="card">
-        <div class="front">
-            <img src="images/bates.jpg">
         </div>
         <div class="back">
             <img src="images/halloween-13200870007Zb.jpg">
@@ -193,3 +79,9 @@
 </div>
 </body>
 </html>
+
+
+
+
+
+
