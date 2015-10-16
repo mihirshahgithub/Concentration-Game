@@ -19,7 +19,7 @@ function card_clicked(card_clicked){
             alert("You have " + match_counter + " matches");
             /* Flipping Card Element Back to Original State After Incorrect Match */
         } else{
-            $(".back").show();
+            $(".back").show(200);
 
         }
         first_card_clicked=null;
