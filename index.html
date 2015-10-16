@@ -6,20 +6,9 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="script.js"></script>
-    <script>
-       $(document).ready(function(){
-           $(".back").click(function card_back(){
-               alert("The paragraph was clicked!");});
-       });
-
-        var first_card_clicked=null;
-        var second_card_clicked=null;
-        var total_possible_matchups=2;
-        var match_counter=0;
-    </script>
 </head>
 <body>
-<p>CLICK ME</p>
+<p>HI</p>
 <header id="game_info">
     <h1 id="game_logo"><img src="images/halloween-5.jpg"></h1>
     <h1 id="game_title">Monster Match</h1>
@@ -44,7 +33,7 @@
         <div class="front">
             <img src="images/texaschainsawmassacre.jpg">
         </div>
-        <div class="back">
+        <div class="back" onclick="card_clicked(this)">
             <img src="images/halloween-13200870007Zb.jpg">
         </div>
 
@@ -53,7 +42,7 @@
         <div class="front">
             <img src="images/it.jpeg">
         </div>
-        <div class="back">
+        <div class="back" onclick="card_clicked(this)">
             <img src="images/halloween-13200870007Zb.jpg">
         </div>
 
@@ -62,7 +51,7 @@
         <div class="front">
             <img src="images/texaschainsawmassacre.jpg">
         </div>
-        <div class="back">
+        <div class="back" onclick="card_clicked(this)">
             <img src="images/halloween-13200870007Zb.jpg">
         </div>
 
@@ -71,7 +60,7 @@
         <div class="front">
             <img src="images/it.jpeg">
         </div>
-        <div class="back">
+        <div class="back" onclick="(card_clicked(this))">
             <img src="images/halloween-13200870007Zb.jpg">
         </div>
 
