@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Monster Match</title>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="mmatch1.css">
+    <script src="mmatch.js"></script>
+</head>
+<body>
+<header id="game_info">
+    <h1 id="game_logo"><img src="images/halloween-5.jpg"></h1>
+    <h1 id="game_title">Monster Match</h1>
+    <h1 id="settings">Settings Link</h1>
+    <h1 id="about"><a href="#">ABOUT.html</a></h1>
+</header>
+<div id="stats">
+    <h1 class="stats_label">Stats</h1>
+    <h1 class="games-played"></h1>
+    <h1 class="label">Games Played</h1>
+    <h1 class="value"></h1>
+    <h1 class="attempts"></h1>
+    <h1 class="label">Attempts</h1>
+    <h1 class="value"></h1>
+    <h1 class="accuracy"></h1>
+    <h1 class="label">Accuracy</h1>
+    <h1 class="value"></h1>
+    <button type="button" class="reset">Reset Game</button>
+</div>
+<div id="game-area">
+    <div class="card">
+        <div class="front">
+            <img src="images/texaschainsawmassacre.jpg">
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img src="images/halloween-13200870007Zb.jpg">
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="images/it.jpeg">
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img src="images/halloween-13200870007Zb.jpg">
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="images/texaschainsawmassacre.jpg">
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img src="images/halloween-13200870007Zb.jpg">
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="images/it.jpeg">
+        </div>
+        <div class="back" onclick="(card_clicked(this))">
+            <img src="images/halloween-13200870007Zb.jpg">
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="images/bates.jpg">
+        </div>
+        <div class="back" onclick="(card_clicked(this))">
+            <img src="images/halloween-13200870007Zb.jpg">
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="images/chucky.jpg">
+        </div>
+        <div class="back" onclick="(card_clicked(this))">
+            <img src="images/halloween-13200870007Zb.jpg">
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="images/bates.jpg">
+        </div>
+        <div class="back" onclick="(card_clicked(this))">
+            <img src="images/halloween-13200870007Zb.jpg">
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="images/chucky.jpg">
+        </div>
+        <div class="back" onclick="(card_clicked(this))">
+            <img src="images/halloween-13200870007Zb.jpg">
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="images/frankenstein.jpeg">
+        </div>
+        <div class="back" onclick="(card_clicked(this))">
+            <img src="images/halloween-13200870007Zb.jpg">
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="images/frankenstein.jpeg">
+        </div>
+        <div class="back" onclick="(card_clicked(this))">
+            <img src="images/halloween-13200870007Zb.jpg">
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="images/freddy.jpg">
+        </div>
+        <div class="back" onclick="(card_clicked(this))">
+            <img src="images/halloween-13200870007Zb.jpg">
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="images/freddy.jpg">
+        </div>
+        <div class="back" onclick="(card_clicked(this))">
+            <img src="images/halloween-13200870007Zb.jpg">
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="images/jason.jpg">
+        </div>
+        <div class="back" onclick="(card_clicked(this))">
+            <img src="images/halloween-13200870007Zb.jpg">
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="images/jason.jpg">
+        </div>
+        <div class="back" onclick="(card_clicked(this))">
+            <img src="images/halloween-13200870007Zb.jpg">
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="images/michael_myers.jpg">
+        </div>
+        <div class="back" onclick="(card_clicked(this))">
+            <img src="images/halloween-13200870007Zb.jpg">
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="images/michael_myers.jpg">
+        </div>
+        <div class="back" onclick="(card_clicked(this))">
+            <img src="images/halloween-13200870007Zb.jpg">
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="images/scream.jpg">
+        </div>
+        <div class="back" onclick="(card_clicked(this))">
+            <img src="images/halloween-13200870007Zb.jpg">
+        </div>
+
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="images/scream.jpg">
+        </div>
+        <div class="back" onclick="(card_clicked(this))">
+            <img src="images/halloween-13200870007Zb.jpg">
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
+
