@@ -63,6 +63,7 @@ body{
     line-height:500%;
     font-family: "arial", helvetica, sans-serif;
     text-transform: uppercase;
+    color:white;
 }
 .stats_label{
     color:orange;
