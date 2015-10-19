@@ -32,7 +32,7 @@ function card_clicked(card_clicked){
         } else {
             //matches=null (I need to set matches to null in order for my matches to reset after an incorrect answer, but that causes problems with my accuracy
             matches=null;
-            $(".back").show(200);
+            $(".back").show(1000);
             accuracy=match_counter/attempts;
             $("#accuracynumber").text(accuracy * 100 + "%").css("text-align","center");
 
