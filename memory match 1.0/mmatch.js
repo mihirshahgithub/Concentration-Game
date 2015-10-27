@@ -30,7 +30,6 @@ function card_clicked(card_clicked){
 
             /* Flipping Card Element Back to Original State After Incorrect Match */
         } else {
-            //matches=null (I need to set matches to null in order for my matches to reset after an incorrect answer, but that causes problems with my accuracy
             matches=null;
             $(".back").show(1000);
             accuracy=match_counter/attempts;
