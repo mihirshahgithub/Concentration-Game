@@ -33,7 +33,7 @@ function card_clicked(card_clicked){
             matches=null;
             $(".back").show(1000);
             accuracy=match_counter/attempts;
-            $("#accuracynumber").text(accuracy * 100 + "%").css("text-align","center");
+            $("#accuracynumber").text((accuracy) * 100 + "%").css("text-align","center");
 
         }
             first_card_clicked = null;
