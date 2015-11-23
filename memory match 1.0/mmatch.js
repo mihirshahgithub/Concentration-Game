@@ -12,14 +12,13 @@ var canClickCards = true;
 
 $(document).ready(function () {
     displayStats();
-    calculateCountdown();
+    //calculateCountdown();
 });
 
 function card_clicked(card_clicked) {
     if (canClickCards == false) {
         return
     }
-
     $(card_clicked).hide();
     /*First Card Clicked */
     if (first_card_clicked == null) {
@@ -33,7 +32,7 @@ function card_clicked(card_clicked) {
         if (first_card_clicked === second_card_clicked) {
             match_counter += 1;
             matches += 1;
-            accuracy = parseFloat((match_counter / attempts)* 100).toFixed(0) + "%";
+            accuracy = parseFloat((match_counter / attempts) * 100).toFixed(0) + "%";
             $("#accuracynumber").text(accuracy).css("text-align", "center");
             console.log("You have " + matches + " matches");
             /* Flipping Card Element Back to Original State After Incorrect Match */
@@ -41,7 +40,8 @@ function card_clicked(card_clicked) {
             canClickCards = false;
             matches = null;
             $(".back").show(1000);
-            accuracy = parseFloat((match_counter / attempts)* 100).toFixed(0) + "%";;
+            accuracy = parseFloat((match_counter / attempts) * 100).toFixed(0) + "%";
+            ;
             $("#accuracynumber").text(accuracy).css("text-align", "center");
         }
         first_card_clicked = null;
@@ -66,29 +66,27 @@ function card_clicked(card_clicked) {
 }
 
 function displayStats() {
-   // accuracy = match_counter / attempts;
+    // accuracy = match_counter / attempts;
     $('#gamenumber').text(games_played).css("text-align", "center");
     $('#attemptnumber').text(attempts).css("text-align", "center");
-  //  $('#accuracynumber').text(0 + '%').css("text-align", "center");
+    //  $('#accuracynumber').text(0 + '%').css("text-align", "center");
 
 
 }
 
 function reset_stats() {
     $('.back').show(200);
-   // $('#accuracynumber').text(0 + '%').css("text-align", "center:");
+    // $('#accuracynumber').text(0 + '%').css("text-align", "center:");
     $('#attemptnumber').text(attempts).css("text align", "center");
     games_played += 1;
     attempts = 0;
     matches = 0;
     match_counter = 0;
     displayStats();
-    calculateCountdown();
-
-
+    setInterval(counter);
 }
 /*
-Building a Timer
+ Building a Timer
  */
 var startingTime = new Date().getTime();
 var countDown = 60;
@@ -103,20 +101,29 @@ function calculateCountdown() {
         $("#minutes").text(minutes < 10 ? "0" + minutes : minutes);
         $("#timeInSeconds").text(timeInSeconds < 10 ? "0" + timeInSeconds : timeInSeconds);
     } else {
-        $("#countdown").hide();
+        $("#countdown").reset();
         $("#aftercount").show();
         clearInterval(counter);
     }
 }
-calculateCountdown();
+//calculateCountdown();
 var counter = setInterval(calculateCountdown, 500);
 
-function audioDelay(){
+function audioDelay() {
 
     setTimeout("audio()", 60000);
 }
 
 
-function audio(){
+function audio() {
     document.getElementById('audio').play();
 }
+/*
+var timerHandle=setTimeout("alert('Ready to Die?')",60000);
+ */
+/*
+function resetTimer(){
+    window.clearTimeout(timerHandle);
+    timerHandle=setTimeout("alert('Ready to Die?')",60000);
+}
+*/
