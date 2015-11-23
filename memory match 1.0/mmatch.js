@@ -11,6 +11,8 @@ var card_array = ['images/texaschainsawmassacre.jpg', 'images/bates.jpg', 'image
 var canClickCards = true;
 
 $(document).ready(function () {
+    displayStats();
+    calculateCountdown();
 });
 
 function card_clicked(card_clicked) {
@@ -31,7 +33,7 @@ function card_clicked(card_clicked) {
         if (first_card_clicked === second_card_clicked) {
             match_counter += 1;
             matches += 1;
-            accuracy = parseFloat(match_counter / attempts).toFixed(2)* 100 + "%";
+            accuracy = parseFloat((match_counter / attempts)* 100).toFixed(0) + "%";
             $("#accuracynumber").text(accuracy).css("text-align", "center");
             console.log("You have " + matches + " matches");
             /* Flipping Card Element Back to Original State After Incorrect Match */
@@ -39,7 +41,7 @@ function card_clicked(card_clicked) {
             canClickCards = false;
             matches = null;
             $(".back").show(1000);
-            accuracy = parseFloat(match_counter / attempts).toFixed(2)* 100 + "%";
+            accuracy = parseFloat((match_counter / attempts)* 100).toFixed(0) + "%";;
             $("#accuracynumber").text(accuracy).css("text-align", "center");
         }
         first_card_clicked = null;
@@ -81,9 +83,40 @@ function reset_stats() {
     matches = 0;
     match_counter = 0;
     displayStats();
+    calculateCountdown();
+
 
 }
 /*
-
-
+Building a Timer
  */
+var startingTime = new Date().getTime();
+var countDown = 60;
+
+function calculateCountdown() {
+    var currentTime = new Date().getTime();
+    var timeDifference = currentTime - startingTime;
+    var timeInSeconds = countDown - Math.floor(timeDifference / 1000);
+    if (timeInSeconds >= 0) {
+        var minutes = Math.floor(timeInSeconds / 60);
+        timeInSeconds -= minutes * 60;
+        $("#minutes").text(minutes < 10 ? "0" + minutes : minutes);
+        $("#timeInSeconds").text(timeInSeconds < 10 ? "0" + timeInSeconds : timeInSeconds);
+    } else {
+        $("#countdown").hide();
+        $("#aftercount").show();
+        clearInterval(counter);
+    }
+}
+calculateCountdown();
+var counter = setInterval(calculateCountdown, 500);
+
+function audioDelay(){
+
+    setTimeout("audio()", 60000);
+}
+
+
+function audio(){
+    document.getElementById('audio').play();
+}

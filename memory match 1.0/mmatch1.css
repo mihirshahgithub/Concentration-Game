@@ -116,4 +116,17 @@ img{
     height:100%;
 }
 
+#countdown{
+    display:inline-block;
+    color:ghostwhite;
+    font-size:3em;
+    font-family:'Old Standard TT', serif;
+    position:relative;
+    left:25%;
+
+}
+
+audio{
+    display:none;
+}
 
