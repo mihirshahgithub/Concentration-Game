@@ -133,3 +133,11 @@ audio{
     display:none;
 }
 
+.select{
+    visibility:hidden;
+}
+
+.matchMade{
+    visibility:hidden;
+}
+

@@ -12,43 +12,60 @@ var canClickCards = true;
 
 $(document).ready(function () {
     displayStats();
-    //calculateCountdown();
+    calculateCountdown();
 });
 
 function card_clicked(card_clicked) {
-    if (canClickCards == false) {
-        return
+    if (canClickCards == true) {
+        $(card_clicked).prev().find('img').attr('src');
+    } else {
+        return;
     }
-    $(card_clicked).hide();
+
+
     /*First Card Clicked */
     if (first_card_clicked == null) {
-
         first_card_clicked = $(card_clicked).prev().find('img').attr('src');
+        $(card_clicked).addClass('select');
     } else {
         second_card_clicked = $(card_clicked).prev().find('img').attr('src');
         attempts += 1;
         $("#attemptnumber").text(attempts).css("text-align", "center");
+        $(card_clicked).addClass('select');
 
 
         if (first_card_clicked == second_card_clicked) {
+            $(".select").removeClass('select').addClass('matchMade');
             match_counter += 1;
             matches += 1;
             accuracy = parseFloat((match_counter / attempts) * 100).toFixed(0) + "%";
             $("#accuracynumber").text(accuracy).css("text-align", "center");
             console.log("You have " + matches + " matches");
+            first_card_clicked = null;
+            second_card_clicked = null;
+            canClickCards = false;
+            setTimeout(function () {
+                canClickCards = true;
+            }, 1000);
             /* Flipping Card Element Back to Original State After Incorrect Match */
         } else {
             canClickCards = false;
+
             matches = null;
-            $(".back").show(1000);
             accuracy = parseFloat((match_counter / attempts) * 100).toFixed(0) + "%";
+            ;
             $("#accuracynumber").text(accuracy).css("text-align", "center");
+
+            setTimeout(function () {
+                $(".select").removeClass("select");
+                canClickCards = true;
+            }, 1000);
+            first_card_clicked = null;
+            second_card_clicked = null;
+
         }
-        first_card_clicked = null;
-        second_card_clicked = null;
-        setTimeout(function () {
-            canClickCards = true;
-        }, 1000);
+
+
     }
 
     if (matches === total_possible_matches) {
@@ -75,7 +92,7 @@ function displayStats() {
 }
 
 function reset_stats() {
-    $('.back').show(200);
+    $('.select').show(200);
     // $('#accuracynumber').text(0 + '%').css("text-align", "center:");
     $('#attemptnumber').text(attempts).css("text align", "center");
     games_played += 1;
@@ -83,7 +100,9 @@ function reset_stats() {
     matches = 0;
     match_counter = 0;
     displayStats();
-    setInterval(counter);
+    calculateCountdown();
+
+
 }
 /*
  Building a Timer
@@ -101,13 +120,12 @@ function calculateCountdown() {
         $("#minutes").text(minutes < 10 ? "0" + minutes : minutes);
         $("#timeInSeconds").text(timeInSeconds < 10 ? "0" + timeInSeconds : timeInSeconds);
     } else {
-        $("#countdown").reset();
+        $("#countdown").hide();
         $("#aftercount").show();
         clearInterval(counter);
-
     }
 }
-//calculateCountdown();
+calculateCountdown();
 var counter = setInterval(calculateCountdown, 500);
 
 function audioDelay() {
@@ -119,12 +137,3 @@ function audioDelay() {
 function audio() {
     document.getElementById('audio').play();
 }
-/*
- var timerHandle=setTimeout("alert('Ready to Die?')",60000);
- */
-/*
- function resetTimer(){
- window.clearTimeout(timerHandle);
- timerHandle=setTimeout("alert('Ready to Die?')",60000);
- }
- */
