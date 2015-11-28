@@ -22,6 +22,7 @@ function card_clicked(card_clicked) {
     $(card_clicked).hide();
     /*First Card Clicked */
     if (first_card_clicked == null) {
+
         first_card_clicked = $(card_clicked).prev().find('img').attr('src');
     } else {
         second_card_clicked = $(card_clicked).prev().find('img').attr('src');
@@ -29,7 +30,7 @@ function card_clicked(card_clicked) {
         $("#attemptnumber").text(attempts).css("text-align", "center");
 
 
-        if (first_card_clicked === second_card_clicked) {
+        if (first_card_clicked == second_card_clicked) {
             match_counter += 1;
             matches += 1;
             accuracy = parseFloat((match_counter / attempts) * 100).toFixed(0) + "%";
@@ -41,7 +42,6 @@ function card_clicked(card_clicked) {
             matches = null;
             $(".back").show(1000);
             accuracy = parseFloat((match_counter / attempts) * 100).toFixed(0) + "%";
-            ;
             $("#accuracynumber").text(accuracy).css("text-align", "center");
         }
         first_card_clicked = null;
@@ -104,6 +104,7 @@ function calculateCountdown() {
         $("#countdown").reset();
         $("#aftercount").show();
         clearInterval(counter);
+
     }
 }
 //calculateCountdown();
@@ -119,11 +120,11 @@ function audio() {
     document.getElementById('audio').play();
 }
 /*
-var timerHandle=setTimeout("alert('Ready to Die?')",60000);
+ var timerHandle=setTimeout("alert('Ready to Die?')",60000);
  */
 /*
-function resetTimer(){
-    window.clearTimeout(timerHandle);
-    timerHandle=setTimeout("alert('Ready to Die?')",60000);
-}
-*/
+ function resetTimer(){
+ window.clearTimeout(timerHandle);
+ timerHandle=setTimeout("alert('Ready to Die?')",60000);
+ }
+ */
