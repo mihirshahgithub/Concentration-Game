@@ -15,9 +15,9 @@ $(document).ready(function () {
     calculateCountdown();
 });
 
-function card_clicked(card_clicked) {
+function card_clicked(element) {
     if (canClickCards == true) {
-        $(card_clicked).prev().find('img').attr('src');
+        $(element).prev().find('img').attr('src');
     } else {
         return;
     }
@@ -25,13 +25,13 @@ function card_clicked(card_clicked) {
 
     /*First Card Clicked */
     if (first_card_clicked == null) {
-        first_card_clicked = $(card_clicked).prev().find('img').attr('src');
-        $(card_clicked).addClass('select');
+        first_card_clicked = $(element).prev().find('img').attr('src');
+        $(element).addClass('select');
     } else {
-        second_card_clicked = $(card_clicked).prev().find('img').attr('src');
+        second_card_clicked = $(element).prev().find('img').attr('src');
         attempts += 1;
         $("#attemptnumber").text(attempts).css("text-align", "center");
-        $(card_clicked).addClass('select');
+        $(element).addClass('select');
 
 
         if (first_card_clicked == second_card_clicked) {
@@ -46,12 +46,10 @@ function card_clicked(card_clicked) {
             canClickCards = false;
             setTimeout(function () {
                 canClickCards = true;
-            }, 1000);
+            }, 800);
             /* Flipping Card Element Back to Original State After Incorrect Match */
         } else {
             canClickCards = false;
-
-            matches = null;
             accuracy = parseFloat((match_counter / attempts) * 100).toFixed(0) + "%";
             ;
             $("#accuracynumber").text(accuracy).css("text-align", "center");
@@ -59,7 +57,7 @@ function card_clicked(card_clicked) {
             setTimeout(function () {
                 $(".select").removeClass("select");
                 canClickCards = true;
-            }, 1000);
+            }, 800);
             first_card_clicked = null;
             second_card_clicked = null;
 
@@ -77,7 +75,10 @@ function card_clicked(card_clicked) {
 
 
         alert("All hail the victor!");
-        $(".back").show(200)
+        //$("#game-area").empty();
+
+        $('.back').removeClass('matchMade');
+
     }
 
 }
@@ -92,8 +93,8 @@ function displayStats() {
 }
 
 function reset_stats() {
-    $('.select').show(200);
-    // $('#accuracynumber').text(0 + '%').css("text-align", "center:");
+
+    $('.back').removeClass('matchMade');
     $('#attemptnumber').text(attempts).css("text align", "center");
     games_played += 1;
     attempts = 0;
@@ -101,6 +102,7 @@ function reset_stats() {
     match_counter = 0;
     displayStats();
     calculateCountdown();
+
 
 
 }
@@ -137,3 +139,4 @@ function audioDelay() {
 function audio() {
     document.getElementById('audio').play();
 }
+
